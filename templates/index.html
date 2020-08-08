@@ -345,7 +345,6 @@ crispy_forms_tags %} {% block content %}
                 </div>
 
                 <div id="updates">
-                  {% if notices %}
                   <h1 class="ui center aligned icon header">
                     <!-- <i class="circular large bell icon"></i> -->
                     Updates
@@ -361,7 +360,7 @@ crispy_forms_tags %} {% block content %}
                         </tr>
                       </thead>
                       <tbody>
-                        {% for notice in notices|slice:":5" %}
+                        {% for notice in notices %}
                         <tr>
                           <td>{{ forloop.counter }}</td>
                           <td>
@@ -397,10 +396,6 @@ crispy_forms_tags %} {% block content %}
                         {% endfor %}
                       </tbody>
                     </table>
-
-                    <a style="float: right;" href="{% url 'allNotices' %}"><i
-                        class="angle double right icon"></i>More</a>
-                    {% endif %}
                   </div>
                 </div>
               </div>
@@ -482,5 +477,36 @@ crispy_forms_tags %} {% block content %}
                   </table>
                 </div>
               </div>
+
+              <!-- Footer -->
+              <footer class="font-small p-3 mt-3 bg-dark">
+                <div class="container text-center">
+                  <div class="social-media icons p-3">
+                    <a href="{% url 'home' %}#home" style="float: right;">
+                      <i class="circular inverted teal large angle double up icon"></i>
+                    </a>
+                    <a href="https://www.instagram.com/_d3varaj_/" target="_blank">
+                      <!-- <i class="circular inverted blue large instagram icon"></i> -->
+                      <i class="red big instagram icon"></i>
+                    </a>
+                    <a href="#facebook"><i class="blue big facebook icon"></i></a>
+                    <a href="https://twitter.com/_deva_raj_" target="_blank"><i class="blue big twitter icon"></i></a>
+                  </div>
+
+                  <div class="copyright">
+                    &copy; Copyright <strong>CSE dept</strong>. All Rights
+                    Reserved
+                  </div>
+                  <div class="credits" data-tooltip="DeV@">
+                    Designed by
+                    <!-- <a href="" style="text-decoration: none; color: teal;"
+                          >DeV@</a
+                      > -->
+                    <img src="{% static 'images/dev.jpg' %}" class="ui avatar image" />
+                  </div>
+                </div>
+              </footer>
+              <!-- Footer -->
+
 
               {% endblock content %}

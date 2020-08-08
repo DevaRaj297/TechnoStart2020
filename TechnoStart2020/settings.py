@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -137,12 +138,4 @@ MESSAGE_TAGS = {
     messages.ERROR: 'red'
 }
 
-LOGGING = {
-    "version":1,
-    "disable_existing_loggers":False,
-    "handlers":{"console":{"class":"logging.StreamHandler"}},
-    "loggers":{
-        "":{"handlers":["console"],"level":"INFO"},
-        "django":{"handlers":["console"],"level":"INFO"},
-    },
-}
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

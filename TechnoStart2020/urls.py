@@ -11,10 +11,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', home, name="home"),
-    path('ts/', home, name="home"),
-    path('ts/notice/', include('notices.urls')),
-    path('ts/user/', include('users.urls')),
-    path('ts/event/', include('events.urls')),
+    path('notice/', include('notices.urls')),
+    path('user/', include('users.urls')),
+    path('event/', include('events.urls')),
 
 ]
 

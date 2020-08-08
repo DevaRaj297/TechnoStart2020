@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+<style>
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    div#single-page {
+        padding-top: 90px;
+    }
+</style>
+
+<div id="single-page" class="ui container" style="width: 40%;">
+    <div class="ui segment">
+        <form method="POST" class="ui form">
+            {% csrf_token %}
+            <div class="field">
+                <label>Username</label>
+                {{form.username|as_crispy_field}}
+            </div>
+            <div class="field">
+                <label>Password</label>
+                {{form.password|as_crispy_field}}
+            </div>
+            <button class="ui button" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

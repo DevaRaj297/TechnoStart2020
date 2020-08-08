@@ -11,8 +11,6 @@ __pycache__/
 __pycache__/
 
 staticfiles/
-static/
-media/
 
 .env
 .myvenv/

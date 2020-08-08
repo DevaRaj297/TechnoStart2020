@@ -9,7 +9,10 @@ __pycache__/
 *.pyc
 *.sqlite3
 __pycache__/
+
 staticfiles/
+static/
+media/
 
 .env
 .myvenv/

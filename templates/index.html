@@ -32,7 +32,11 @@ crispy_forms_tags %} {% block content %}
       {% for event in tech_events|slice:":3" %}
       <div class="teal card">
         <div class="ui fluid image">
-          <img src="{{ event.cover.url }}" style="height: 180px;" />
+          <!-- <img src="{{ event.cover.url }}" style="height: 180px;" /> -->
+          {% with 'images/event_covers/'|add:event.title|add:'.jpg' as cover_static_url %}
+          <img src="{% static cover_static_url|lower %}" style="height: 180px;" alt="{{cover_static_url}}"
+            onerror="this.onerror=null;this.src=`{% static 'images/event_covers/default.jpg' %}`" />
+          {% endwith %}
         </div>
         <div class="content">
           <div class="header">{{ event.title|upper }}</div>
@@ -180,7 +184,11 @@ crispy_forms_tags %} {% block content %}
               {% for event in non_tech_events|slice:":3" %}
               <div class="purple card">
                 <div class="ui fluid image">
-                  <img src="{{ event.cover.url }}" style="height: 180px;" />
+                  <!-- <img src="{{ event.cover.url }}" style="height: 180px;" /> -->
+                  {% with 'images/event_covers/'|add:event.title|add:'.jpg' as cover_static_url %}
+                  <img src="{% static cover_static_url|lower %}" style="height: 180px;" alt="{{cover_static_url}}"
+                    onerror="this.onerror=null;this.src=`{% static 'images/event_covers/default.jpg' %}`" />
+                  {% endwith %}
                 </div>
                 <div class="content">
                   <div class="header">{{ event.title|upper }}</div>

@@ -8,11 +8,11 @@ class Event(models.Model):
     title = models.CharField(max_length=60)
     description = models.TextField()
     status = models.CharField(max_length=50, blank=True)
-    cover = models.ImageField(upload_to='event_covers/', default='event_covers/default.jpg')
+    cover = models.ImageField(upload_to='event_covers/', default='event_covers/default.jpg', null=True, blank=True)
     category = models.CharField(max_length=20, choices=event_types)
-    rules = models.TextField()
+    rules = models.TextField(blank=True)
     no_of_participants = models.IntegerField()
-    organizers = models.TextField()
+    organizers = models.TextField(blank=True)
     winners = models.TextField(blank=True)
 
     def __str__(self):
